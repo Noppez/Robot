@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Template originator   = "Bernhard Straub"
+          created      = "2013/12/31"
+          lastModified = "2013/12/31">
+	
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>MonoBrick Project</_Name>
+		<_Category>MonoBrick</_Category>
+		<Icon>md-project-gui</Icon>
+		<LanguageName>C#</LanguageName>
+		<_Description>MonoBrick Project</_Description>
+		<DefaultFilename>MonoBrickProject</DefaultFilename>
+	</TemplateConfiguration>
+	
+	<!-- Actions -->
+	<Actions>
+		<Open filename = "Main.cs"/>
+	</Actions>
+
+	<!-- Template Content -->
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		
+		<Project name = "${ProjectName}" directory = "." type = "MonoBrick">
+			<Options Target = "Exe" MainFile = "Main.cs"/>
+			<Options>
+				<UseMSBuildEngine>False</UseMSBuildEngine>
+			</Options>
+
+			<References>
+				<Reference type="Gac" refto="System" />
+				<Reference type="Assembly" refto="MonoBrickFirmware.dll" />
+			</References>
+
+			<Files>
+				<File name="Main.cs">
+<![CDATA[
+using System;
+using MonoBrickFirmware;
+using MonoBrickFirmware.Display.Dialogs;
+using MonoBrickFirmware.Display;
+using MonoBrickFirmware.Movement;
+using System.Threading;
+
+namespace MonoBrickHelloWorld
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			InfoDialog dialog = new InfoDialog("Attach a motor to port A", true);
+			dialog.Show();//Wait for enter to be pressed
+			Motor motor = new Motor(MotorPort.OutA);
+			motor.SetSpeed(50);
+			Thread.Sleep(3000);
+			motor.Off();
+			Lcd.Clear();
+			Lcd.Update();
+		}
+	}
+}
+]]>
+				</File>
+			</Files>
+		</Project>
+	</Combine>
+</Template>

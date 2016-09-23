@@ -1,0 +1,17 @@
+# Exclude the build directory
+*/bin
+*/obj
+*/html
+/packages
+
+ 
+# Exclude temp nibs, swap files and MonoDevelop user preferences
+*~.nib
+*.swp
+*.userprefs
+*.pidb
+*.suo
+ 
+# Exclude OS X folder attributes
+.DS_Store
+ 

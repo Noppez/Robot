@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{67261E03-D263-4C42-A5AD-2A4820231B28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MonoBrickFirmware</RootNamespace>
+    <AssemblyName>MonoBrickFirmware</AssemblyName>
+    <UseMSBuildEngine>False</UseMSBuildEngine>
+    <ReleaseVersion>1.2</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\MonoBrickFirmware.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Native\Libc.cs" />
+    <Compile Include="Tools\QueueThread.cs" />
+    <Compile Include="Display\Console.cs" />
+    <Compile Include="Display\Basics.cs" />
+    <Compile Include="Display\Bitmap.cs" />
+    <Compile Include="Display\Font.cs" />
+    <Compile Include="Display\Lcd.cs" />
+    <Compile Include="Display\MonoPicture.cs" />
+    <Compile Include="Sensors\HTGyroSensor.cs" />
+    <Compile Include="Sensors\HTCompassSensor.cs" />
+    <Compile Include="Sensors\HTTiltSensor.cs" />
+    <Compile Include="Sensors\SensorManager.cs" />
+    <Compile Include="Sensors\ISensor.cs" />
+    <Compile Include="Movement\Output.cs" />
+    <Compile Include="Movement\Vehicle.cs" />
+    <Compile Include="Movement\MotorBase.cs" />
+    <Compile Include="Movement\Motor.cs" />
+    <Compile Include="Movement\MotorSync.cs" />
+    <Compile Include="Native\KernelByteCodes.cs" />
+    <Compile Include="UserInput\Buttons.cs" />
+    <Compile Include="UserInput\ButtonEvents.cs" />
+    <Compile Include="Tools\BmpImage.cs" />
+    <Compile Include="Tools\ByteArrayCreator.cs" />
+    <Compile Include="Sensors\HTColorSensor.cs" />
+    <Compile Include="Sensors\AnalogSensor.cs" />
+    <Compile Include="Sensors\I2CSensor.cs" />
+    <Compile Include="Sensors\UARTSensor.cs" />
+    <Compile Include="Native\ProcessHelper.cs" />
+    <Compile Include="Display\Menus\Menu.cs" />
+    <Compile Include="Display\Dialogs\CharacterDialog.cs" />
+    <Compile Include="Display\Dialogs\Dialog.cs" />
+    <Compile Include="Display\Dialogs\InfoDialog.cs" />
+    <Compile Include="Display\Dialogs\QuestionsDialog.cs" />
+    <Compile Include="Display\Dialogs\SelectDialog.cs" />
+    <Compile Include="Sound\Speaker.cs" />
+    <Compile Include="Tools\XmlHelper.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
+    <Compile Include="Sensors\SensorFactory.cs" />
+    <Compile Include="Sensors\EV3GyroSensor.cs" />
+    <Compile Include="Sensors\EV3IRSensor.cs" />
+    <Compile Include="Sensors\NXTLightSensor.cs" />
+    <Compile Include="Sensors\NXTUltraSonicSensor.cs" />
+    <Compile Include="Sensors\NXTSoundSensor.cs" />
+    <Compile Include="Sensors\NXTTouchSensor.cs" />
+    <Compile Include="Sensors\EV3TouchSensor.cs" />
+    <Compile Include="Sensors\EV3ColorSensor.cs" />
+    <Compile Include="Sensors\NXTColorSensor.cs" />
+    <Compile Include="Sensors\EV3UltraSonicSensor.cs" />
+    <Compile Include="Sensors\SensorListner.cs" />
+    <Compile Include="Display\Dialogs\StepDialog.cs" />
+    <Compile Include="Display\Animation\IAnimation.cs" />
+    <Compile Include="Display\Animation\ProgressAnimation.cs" />
+    <Compile Include="Display\Dialogs\StepContainer.cs" />
+    <Compile Include="Display\Dialogs\IStep.cs" />
+    <Compile Include="Display\Dialogs\ProgressDialog.cs" />
+    <Compile Include="Native\AOTHelper.cs" />
+    <Compile Include="Connections\WiFiDevice.cs" />
+    <Compile Include="Movement\PositionPID.cs" />
+    <Compile Include="Tools\MovingAverage.cs" />
+    <Compile Include="Tools\PIDAbstraction.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Display\Dialogs\DialogWithProgessAnimation.cs" />
+    <Compile Include="Sensors\NoSensor.cs" />
+    <Compile Include="Sensors\UnknownSensor.cs" />
+    <Compile Include="FileSystem\ProgramManager.cs" />
+    <Compile Include="FileSystem\ProgramInformation.cs" />
+    <Compile Include="Sensors\MSDistanceSensor.cs" />
+    <Compile Include="Sensors\MSAngleSensor.cs" />
+    <Compile Include="Sensors\SensorAttachment.cs" />
+    <Compile Include="Sensors\SensorDetector.cs" />
+    <Compile Include="Sensors\MSSensorMuxBase.cs" />
+    <Compile Include="..\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Display\Menus\MenuContainer.cs" />
+    <Compile Include="Display\Menus\IChildItem.cs" />
+    <Compile Include="Display\Menus\IParentItem.cs" />
+    <Compile Include="Display\Menus\ItemList.cs" />
+    <Compile Include="Display\Menus\ItemWithCharacterInput.cs" />
+    <Compile Include="Display\Menus\ItemWithCheckBox.cs" />
+    <Compile Include="Display\Menus\ItemWithNumericInput.cs" />
+    <Compile Include="Display\Menus\ItemWithOptions.cs" />
+    <Compile Include="Display\Menus\ItemWithProgramList.cs" />
+    <Compile Include="Display\Menus\ItemWithDialog.cs" />
+    <Compile Include="Display\Menus\ItemWithSettings.cs" />
+    <Compile Include="Settings\FirmwareSettings.cs" />
+    <Compile Include="Display\Menus\ItemWithCheckBoxStep.cs" />
+    <Compile Include="Display\Menus\ItemWithWiFiOptions.cs" />
+    <Compile Include="Display\Menus\ItemWithUpdateDialog.cs" />
+    <Compile Include="FirmwareUpdate\InstallPackage.cs" />
+    <Compile Include="FirmwareUpdate\UpdateHelper.cs" />
+    <Compile Include="Display\Menus\ItemWithBrickInfo.cs" />
+    <Compile Include="Connections\IWiFiDevice.cs" />
+    <Compile Include="Connections\EV3WiFiDevice.cs" />
+    <Compile Include="UserInput\IButtons.cs" />
+    <Compile Include="UserInput\EV3Buttons.cs" />
+    <Compile Include="Display\ILcd.cs" />
+    <Compile Include="Display\EV3Lcd.cs" />
+    <Compile Include="FileSystem\IProgramManager.cs" />
+    <Compile Include="FileSystem\EV3ProgramManager.cs" />
+    <Compile Include="Settings\IFirmwareSettings.cs" />
+    <Compile Include="Settings\EV3FirmwareSettings.cs" />
+    <Compile Include="FirmwareUpdate\VersionInfo.cs" />
+    <Compile Include="FirmwareUpdate\IUpdateHelper.cs" />
+    <Compile Include="FirmwareUpdate\EV3UpdateHelper.cs" />
+    <Compile Include="Device\IBrick.cs" />
+    <Compile Include="Device\Brick.cs" />
+    <Compile Include="Device\EV3Brick.cs" />
+    <Compile Include="Native\GacHelper.cs" />
+    <Compile Include="Display\Menus\ItemWithTurnOff.cs" />
+    <Compile Include="Native\PlatFormHelper.cs" />
+    <Compile Include="Display\Menus\ChildItem.cs" />
+    <Compile Include="Display\Menus\ParentItem.cs" />
+    <Compile Include="Display\Menus\ChildItemWithParent.cs" />
+    <Compile Include="Display\Dialogs\UserInput\ButtonContainer.cs" />
+    <Compile Include="Display\Dialogs\UserInput\Buttons.cs" />
+    <Compile Include="Display\Dialogs\UserInput\CharacterSets.cs" />
+    <Compile Include="Display\Dialogs\UserInput\Keyboard.cs" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <ChangeLogPolicy UpdateMode="None" VcsIntegration="None" inheritsSet="Mono">
+            <MessageStyle LineAlign="0" />
+          </ChangeLogPolicy>
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <EmbeddedResource Include="Display\Resources\info56_12.bin">
+      <LogicalName>font.info56_12</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display\Resources\profont_7.bin">
+      <LogicalName>font.profont_7</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FileSystem\" />
+    <Folder Include="Settings\" />
+    <Folder Include="FirmwareUpdate\" />
+    <Folder Include="Device\" />
+    <Folder Include="Display\Dialogs\UserInput\" />
+  </ItemGroup>
+</Project>
